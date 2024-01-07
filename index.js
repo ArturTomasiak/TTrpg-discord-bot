@@ -46,7 +46,7 @@ client.on('messageCreate', (message) => {
     if (message.author.bot) { return; }
 
     if (message.content.toLowerCase() === '*help'){
-        message.channel.send('```List of commands: \n\n*fantasy name - picks a random name for your character \n\n*roll [rolls]d[size] - for example *roll 4d6 or *roll 1d20 (20 is the max for both rolls and size) \n\n*%roll - rolls a d% \n\n*player sheet [game name] - f.e. *player sheet dnd5e, available player sheets: dnd5e, dnd3.5, pathfinder2e```')
+        message.channel.send('```List of commands: \n\n*fantasy name - picks a random name for your character \n\n*roll [rolls]d[size] - for example *roll 4d6 or *roll 1d20 (20 is the max for both rolls and size) \n\n*%roll - rolls a d% \n\n*player sheet [game name] - f.e. *player sheet dnd5e, available player sheets: dnd5e, dnd3.5, pathfinder2e \n\n*github - link to the source code of TTrpg bot```')
     }
 
     if (message.content.toLowerCase().startsWith('*roll')){
@@ -84,6 +84,10 @@ client.on('messageCreate', (message) => {
         } else {
             message.reply('Invalid command format. Use *player sheet [game name]');
         }
+    }
+
+    if (message.content.toLowerCase().startsWith('*github')) {
+        message.reply('https://github.com/ArturTomasiak/TTrpg-discord-bot');
     }
 })
 
